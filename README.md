@@ -69,4 +69,4 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más 
 👩‍💻 Autor
 Helena De.V
 
-GitHub: @dlc-helena
+GitHub: @helena-dlc
