@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban To-Do Board Helena De.V</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <h1>Kanban To-Do Board</h1>
+    
+    <!-- Sección para agregar nuevas tareas -->
+    <div class="task-input-container">
+        <input type="text" id="taskInput" placeholder="Add a new task" onkeypress="handleKeyPress(event)">
+        <select id="prioritySelect">
+            <option value="baja">🟢 Baja</option>
+            <option value="media">🟡 Media</option>
+            <option value="alta">🔴 Alta</option>
+        </select>
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <!-- Tablero Kanban con tres columnas -->
+    <div class="kanban-board">
+        <!-- Columna: Sin Empezar -->
+        <div class="kanban-column">
+            <div class="column-header todo-header">
+                Sin Empezar 
+                <span class="task-counter" id="todo-counter">0</span>
+            </div>
+            <div class="task-drop-zone" id="todo-zone" ondrop="drop(event, 'todo')" ondragover="allowDrop(event)"></div>
+        </div>
+
+        <!-- Columna: En Proceso -->
+        <div class="kanban-column">
+            <div class="column-header doing-header">
+                En Proceso 
+                <span class="task-counter" id="doing-counter">0</span>
+            </div>
+            <div class="task-drop-zone" id="doing-zone" ondrop="drop(event, 'doing')" ondragover="allowDrop(event)"></div>
+        </div>
+
+        <!-- Columna: Finalizado -->
+        <div class="kanban-column">
+            <div class="column-header done-header">
+                Finalizado 
+                <span class="task-counter" id="done-counter">0</span>
+            </div>
+            <div class="task-drop-zone" id="done-zone" ondrop="drop(event, 'done')" ondragover="allowDrop(event)"></div>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

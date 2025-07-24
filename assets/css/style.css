@@ -1,0 +1,245 @@
+ body {
+            font-family: "poppins", sans-serif;
+           background: linear-gradient(135deg, #f0e7ee, #ff9ced);
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Contenedor para el input de nuevas tareas */
+        .task-input-container {
+            text-align: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            border: 2px solid #ff69b4;
+            border-radius: 15px;
+            font-size: 1em;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+        /* Selector de prioridad */
+        select {
+            padding: 12px;
+            border: 2px solid #ff69b4;
+            border-radius: 15px;
+            font-size: 1em;
+            margin-right: 10px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 15px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e55aa0;
+        }
+
+        /* Contenedor principal del tablero Kanban */
+        .kanban-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Cada columna del tablero */
+        .kanban-column {
+            background: rgb(252, 248, 251);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            min-height: 400px;
+        }
+
+        /* Títulos de las columnas */
+        .column-header {
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        /* Colores específicos para cada columna */
+        .todo-header {
+            background: linear-gradient(135deg, #ff91bb, #fecfef);
+        }
+
+        .doing-header {
+            background: linear-gradient(135deg, #00FFDE, #fed6e3);
+        }
+
+        .done-header {
+            background: linear-gradient(135deg, #ce75f4, #c3cfe2);
+        }
+
+        /* Área donde se dropean las tareas */
+        .task-drop-zone {
+            min-height: 300px;
+            border: 2px dashed transparent;
+            border-radius: 10px;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        /* Estilo cuando se arrastra una tarea sobre la zona */
+        .task-drop-zone.drag-over {
+            border-color: #ff69b4;
+            background-color: rgba(255, 105, 180, 0.1);
+        }
+
+        /* Estilos para cada tarea individual */
+        .task-card {
+            background: #f8f9fa;
+            border: 1px solid #f99ff1;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: move;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* Efecto hover en las tareas */
+        .task-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Estilo cuando se está arrastrando una tarea */
+        .task-card.dragging {
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+
+        /* Texto de la tarea */
+        .task-text {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+        }
+
+        /* Etiqueta de prioridad */
+        .priority-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .priority-alta {
+            background-color: #fa6977;
+           
+        }
+
+        .priority-media {
+            background-color: #fdff76;
+            color: #44494f;
+        }
+
+        .priority-baja {
+            background-color: #8feca5;
+        }
+
+        /* Contenedor de botones de la tarea */
+        .task-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        /* Botones pequeños para acciones de tarea */
+        .task-btn {
+            padding: 5px 10px;
+            font-size: 0.8em;
+            border-radius: 8px;
+            margin-left: 5px;
+        }
+
+        .delete-btn {
+            background-color: #D91656;
+           
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+        /* Botones para mover tareas */
+        .move-btn {
+            background-color: #94ffff;
+            color:#44494f;
+            font-size: 0.7em;
+            padding: 4px 8px;
+        }
+
+        .move-btn:hover {
+            background-color: #218488;
+        }
+
+        .back-btn {
+            background-color: #eca9da;
+            color: #212529;
+        }
+
+        .back-btn:hover {
+            background-color: #f250e2;
+        }
+
+        /* Contador de tareas en cada columna */
+        .task-counter {
+            background: rgba(255, 105, 180, 0.2);
+            color: #ff69b4;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        /* Responsive para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .kanban-board {
+                grid-template-columns: 1fr;
+            }
+            
+            input[type="text"] {
+                width: 200px;
+                margin-bottom: 10px;
+            }
+
+            select {
+                margin-bottom: 10px;
+            }
+        }
