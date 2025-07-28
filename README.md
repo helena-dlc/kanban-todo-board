@@ -1,4 +1,4 @@
-Una aplicación web de tablero Kanban elegante y funcional para gestión de tareas, desarrollada con HTML, CSS y JavaScript puros.
+#Una aplicación web de tablero Kanban funcional para gestión de tareas, desarrollada con HTML, CSS y JavaScript puros.
 ✨ Características
 📋 Gestión de Tareas
 
@@ -6,7 +6,7 @@ Crear tareas nuevas con un input intuitivo
 Organización en tres columnas: Sin Empezar, En Proceso, Finalizado
 Eliminación de tareas con confirmación de seguridad
 
-🏷️ Sistema de Prioridades
+#🏷️ Sistema de Prioridades
 
 Etiquetas visuales con colores distintivos:
 
@@ -64,6 +64,7 @@ kanban-todo-board/
 │ └── style.css # Estilos
 └── js/
 └── script.js # Lógica JavaScript
+
 📝 Licencia
 Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 👩‍💻 Autor
