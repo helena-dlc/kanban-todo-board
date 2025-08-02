@@ -43,7 +43,7 @@ Navegador web moderno (Chrome, Firefox, Safari, etc)
 No requiere servidor ni dependencias externas
 instrucciones:
 1.Clona el Repositorio:
-git clone https://github.com/tu-usuario/kanban-todo-board.git
+git clone https://github.com/helena-dlc/kanban-todo-board.git
 cd kanban-todo-board
 Uso Básico
 
